@@ -2,7 +2,6 @@ import React, {FunctionComponent, useEffect} from 'react';
 import {InputProps} from "../types/InputProps";
 import useInput from "../hooks/useInput";
 
-
 const TextField: FunctionComponent<InputProps> = ({source, label, placeholder, type, minLength, maxLength}) => {
     const validate = [];
 
