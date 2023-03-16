@@ -9,6 +9,9 @@ export interface InputProps {
     error?: string;
     minLength?: number;
     maxLength?: number;
+
+    validate?: ((value:string) => string)[];
+ 
 }
 
 
