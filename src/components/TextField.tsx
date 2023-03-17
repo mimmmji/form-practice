@@ -3,11 +3,8 @@ import {InputProps} from "../types/InputProps";
 import useInput from "../hooks/useInput";
 
 const TextField: FunctionComponent<InputProps> = ({source, label, placeholder, type, validate}) => {
-
-
     const { value, onChange, error } = useInput({ source, validate });
 
-        
     return (
         <div>
             <div style={{display: 'flex', gridGap: '8px'}}>
