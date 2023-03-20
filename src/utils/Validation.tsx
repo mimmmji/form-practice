@@ -4,12 +4,16 @@ export interface ValidationRule {
   }
 
 export function validateInput(value: string, rules: ValidationRule[]): string | undefined {
-    for (const rule of rules) {
-      const error = rule(value);
-      if (error) {
-        return error;
-      }
-    }
+    return rules.reduce((acc, rule) => {
+
+    })
+
+    // for (const rule of rules) {
+    //   const error = rule(value);
+    //   if (error) {
+    //     return error;
+    //   }
+    // }
   }
 
 export function min (minLength: number): ValidationRule {

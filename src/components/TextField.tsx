@@ -3,10 +3,12 @@ import {InputProps} from "../types/InputProps";
 import useInput from "../hooks/useInput";
 
 const TextField: FunctionComponent<InputProps> = ({source, label, placeholder, type, validate}) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4df9988de5fcc646fabfadcab1b49aad763fb355
     const { value, onChange, error } = useInput({ source, validate });
 
-        
     return (
         <div>
             <div style={{display: 'flex', gridGap: '8px'}}>

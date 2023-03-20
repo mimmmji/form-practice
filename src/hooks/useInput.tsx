@@ -9,30 +9,20 @@ interface UseInputProps extends Pick<InputProps, 'source'> {
 
 function useInput(props: UseInputProps) {
     const {setValues, values, setErrors, errors} = useContext(FormContext);
-    const [value, setValue] = useState(values[props.source] || '');
-
-    useEffect(()=>{ 
-      setValue(values[props.source] || '');
-    }, [props.source, values]);
 
     const onChange = useCallback((v: string) => {
-        setValue(v);
         setValues({
             ...values,
             [props.source]: v,
         });
         setErrors({
           ...errors,
-          [props.source]: validateInput(v, props.validate || []),
+          [props.source]: validateInput(v, props.validate ?? []),
         });
     }, [props.source, props.validate, setValues,setErrors, values, errors]);
-        
-
 
     const error = errors[props.source];
-
-
-    return {value, onChange, error};
+    return {value: values[props.source], onChange, error};
 }
 
 export default useInput;
