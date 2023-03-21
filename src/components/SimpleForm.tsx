@@ -16,11 +16,9 @@ const SimpleForm = ({children}: PropsWithChildren<{}>) => {
     
     const onClick = (e: any) => {
         e.preventDefault();
-        const errorCount = Object.keys(errors).filter(key => errors[key]).length;
-        if (errorCount === 0) {
-            alert(JSON.stringify(values));
-        } else {
-            alert(`제출할 수 없습니다. ${errorCount}개의 에러를 확인해주세요.`);
+        const hasError = Object.values(errors).some(Boolean);
+        if (!hasError) {
+          alert(JSON.stringify(values));
         }
     }
 

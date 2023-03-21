@@ -4,17 +4,12 @@ export interface ValidationRule {
   }
 
 export function validateInput(value: string, rules: ValidationRule[]): string | undefined {
-    return rules.reduce((acc, rule) => {
+    return rules.reduce((acc, rule) => acc || rule(value), '')
+}
 
-    })
-
-    // for (const rule of rules) {
-    //   const error = rule(value);
-    //   if (error) {
-    //     return error;
-    //   }
-    // }
-  }
+export function required(): ValidationRule {
+  return (value: string) => (value ? '' : '필수 입력사항입니다.');
+}
 
 export function min (minLength: number): ValidationRule {
     return (value: string) => value && value.length < minLength ? `Error! 최소 ${minLength}글자 이상이여야 합니다` : '';
