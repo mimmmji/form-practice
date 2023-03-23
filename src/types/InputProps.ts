@@ -2,6 +2,7 @@ import {HTMLInputTypeAttribute} from "react";
 
 
 export interface InputProps {
+    id: string;
     source: string;
     label: string;
     placeholder?: string;
