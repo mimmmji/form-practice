@@ -10,9 +10,9 @@ const TextField: FunctionComponent<InputProps> = ({source, label, placeholder, t
             <div style={{display: 'flex', gridGap: '8px'}}>
                 <label htmlFor={source}>{label}</label>
                 <input id={source} value={value} onChange={e => onChange(e.target.value)} name={source} type={type}
-                       placeholder={placeholder} aria-invalid={error ? "true" : "false"}/>
+                       placeholder={placeholder} />
             </div>
-            {error !== '' && <div style={{ color: 'red' }}>{error}</div>}
+            {error !== '' && <div data-testid={`error-message`} style={{ color: 'red' }}>{error}</div>}
         </div>
     );
 };
