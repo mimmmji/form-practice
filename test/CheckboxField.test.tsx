@@ -1,3 +1,4 @@
+import React from 'react';
 import {fireEvent, render, screen} from "@testing-library/react";
 import SimpleForm from "../src/components/SimpleForm";
 import CheckboxField from "../src/components/CheckboxField";
@@ -32,7 +33,6 @@ describe('CheckboxField', () => {
 
         fireEvent.click(checkboxElement);
 
-        // controlled component vs uncontrolled component
         expect(checkboxElement).toBeChecked();
     });
 });
