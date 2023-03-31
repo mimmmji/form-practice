@@ -1,5 +1,9 @@
 import {HTMLInputTypeAttribute} from "react";
 
+type Option = {
+    label: string;
+    value: string;
+}
 
 export interface InputProps {
     id: string;
@@ -12,7 +16,7 @@ export interface InputProps {
     maxLength?: number;
 
     validate?: ((value:string) => string)[];
- 
+    options?: Option[];
 }
 
 
